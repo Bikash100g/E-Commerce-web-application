@@ -40,5 +40,4 @@ async function importCSV() {
         process.exit(1);
     }
 }
-
 importCSV();

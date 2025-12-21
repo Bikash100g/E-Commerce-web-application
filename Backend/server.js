@@ -9,13 +9,13 @@ const app = express();
 
 
 const FRONTEND_ORIGIN = process.env.FRONTEND_ORIGIN 
-  || 'https://crispy-train-5g464g6544qqh7w5j-3000.app.github.dev'; // no trailing slash
+  || 'https://crispy-train-5g464g6544qqh7w5j-3000.app.github.dev'; 
 
 app.use(cors({
   origin: FRONTEND_ORIGIN,
   methods: ['GET','POST','PUT','PATCH','DELETE','OPTIONS'],
   allowedHeaders: ['Content-Type','Authorization'],
-  credentials: false // set true only if you use cookies/sessions
+  credentials: false 
 }));
 
 
@@ -97,8 +97,6 @@ app.get('/top-products', async (req, res) => {
         res.status(400).json({ error: err.message });
     }
 });
-
-
 app.get('/products-by-rating', async (req, res) => {
     const { season, minRating } = req.query;
     try {
